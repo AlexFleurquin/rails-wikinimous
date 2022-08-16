@@ -1,0 +1,15 @@
+<div class="Navbar d-flex justify-content-between p-5 m-5 bg-light rounded-2">
+  <h1>Wikinimous</h1>
+  <button type="button" class="btn btn-dark rounded-4"><%= link_to "New article", new_article_path(@article) %></button>
+</div>
+
+<div class="container">
+  <ul>
+      <% @articles.each do |article| %>
+      <li class="card card-body m-5">
+        <h5 class="card-title text-decoration-none"> <%= link_to(article.title, article_path(article)) %> </h5>
+        <p><%= article.content %></p>
+      </li>
+      <% end %>
+  </ul>
+</div>
